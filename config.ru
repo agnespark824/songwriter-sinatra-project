@@ -9,3 +9,4 @@ run ApplicationController
 use SessionsController
 use SongsController
 use UsersController
+use SetlistsController

@@ -1,0 +1,24 @@
+<form action="/setlists" method="post">
+    
+    <label for="setlist_event">
+        <h3>Event</h3>
+    </label>
+    <input type="text" name="setlist[event]">
+    <br>
+
+    <label for="setlist_description">
+        <h3>Event Description</h3>
+    </label>
+    <textarea id="setlist_description" name="setlist[description]" rows="5" cols="120"></textarea>
+    <br>
+
+    <label for="setlist_songs">
+        <h3>Setlist</h3>
+    </label>
+    <% @songs.each do |song| %>
+        <input type="checkbox" name="setlist[song_ids][]" id="<%= song.id %>" value="<%= song.id %>"><%= song.title %><br>
+    <% end %>
+
+    <input type="submit" value="Create">
+      
+</form>

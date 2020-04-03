@@ -1,0 +1,10 @@
+<h2>My Setlists</h2> 
+<ul>    
+    <% @setlists.each do |setlist| %>
+        <li>
+            <a href="/setlists/<%= setlist.id %>"><%= setlist.event %></a>
+        </li>
+    <% end %>
+</ul>
+
+

@@ -1,3 +1,4 @@
+<div>
 <h2>My Songs</h2> 
 <ul>    
     <% @songs.each do |song| %>
@@ -6,6 +7,15 @@
         </li>
     <% end %>
 </ul>
+</div>
 
-
-
+<div>
+<h2>My Setlists</h2> 
+<ul>    
+    <% @setlists.each do |setlist| %>
+        <li>
+            <a href="/setlists/<%= setlist.id %>"><%= setlist.event %></a>
+        </li>
+    <% end %>
+</ul>
+</div>

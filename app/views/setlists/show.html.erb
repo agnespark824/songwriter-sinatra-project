@@ -1,0 +1,19 @@
+<h2><%= @setlist.event %></h2>
+
+<br>
+<br>
+
+<b>Event Description: </b>
+<p><%= @setlist.description %></p>
+<br>
+<b>Songs: </b>
+<p><% @setlist.songs.each do |song| %>
+    <%= song.title %>
+    <% end %>
+    </p>
+<br>
+
+<div class="edit-link">
+<a href="/setlists/<%= @setlist.id %>/edit">Edit</a>
+<a href="/setlists/<%= @setlist.id %>/delete">Delete</a>
+</div>

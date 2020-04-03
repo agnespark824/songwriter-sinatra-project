@@ -17,9 +17,10 @@
 		<% if logged_in? %>
 			<div class="topnav">
 				<a href="/songs" style="float:left;">Home</a>
-				<a href="/users/<%= session["user_id"] %>" style="float:left;">My Account</a>
 				<a href="/songs/new" style="float:left;">+ New Song</a>
+				<a href="/setlists/new" style="float:left;">+ New Setlist</a>
 				<a href="/logout" style="float:right;">Log Out</a>
+				<a href="/users/<%= session["user_id"] %>" style="float:right;">My Account</a>
 			</div>
 		<% else %>
 			<div class="topnav">

@@ -5,6 +5,7 @@ class SongsController < ApplicationController
 			redirect "/"
 		else
 			@songs = Song.where(user_id: current_user)
+			@setlists = Setlist.where(user_id: current_user)
 			erb :"/songs/index.html"
 		end
   	end
@@ -33,7 +34,7 @@ class SongsController < ApplicationController
   	patch "/songs/:id" do
 		if logged_in?
 			@song = Song.find(params["id"])
-			@song.update(title: params["song"]["title"], themes: params["song"]["themes"], notes: params["song"]["notes"], lyrics: params["song"]["lyrics"])
+			@song.update(params["song"])
 			redirect "/songs/#{@song.id}"
 		else
 			redirect "/"
