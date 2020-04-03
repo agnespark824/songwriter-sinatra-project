@@ -13,7 +13,6 @@
 
 		<link rel="stylesheet" href="/stylesheets/style.css" />
 
-	
 		<% if logged_in? %>
 			<div class="topnav">
 				<a href="/songs" style="float:left;">Home</a>
@@ -29,28 +28,26 @@
 			</div>
 		<% end %>
 	
-	
-	<div class="wrapper">
+		<div class="wrapper">
 
-	<% flash.keys.each do |type| %>
-		<div data-alert class="flash <%= type %> alert-box radius">
-			<%= flash[type] %>
-		</div>
-	<% end %>
+		<% flash.keys.each do |type| %>
+			<div data-alert class="flash <%= type %> alert-box radius">
+				<%= flash[type] %>
+			</div>
+		<% end %>
 
 				<%= yield %>
 
 		</div>
+
 		<div class="footer">
-
-		<small>&copy; 2020 <strong>SinatraProject</strong></small>
-	</div>
-
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-		<!--[if lt IE 7]>
-			<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
-			<script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
-		<![endif]-->
-	</head>
+			<small>&copy; 2020 <strong>SongWriter</strong></small>
+		</div>
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+			<!--[if lt IE 7]>
+				<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+				<script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+			<![endif]-->
+		</head>
 	<body>
 </html>

@@ -2,7 +2,7 @@
     <input id="hidden" type="hidden" name="_method" value="patch">
 
     <label for="setlist_event"><h3>Event</h3></label>
-    <input type="text" name="setlist[event]" value="<%= @setlist.event %>">
+    <textarea id="setlist_event" name="setlist[event]" rows="1" cols="100"><%= @setlist.event %></textarea>
     <br>
 
     <label for="setlist_description"><h3>Event Description</h3></label>

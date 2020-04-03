@@ -3,6 +3,10 @@
 <form action="/songs/<%= @song.id %>" method="post">
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" value="Delete Song">
-    <a href="/songs">Cancel</a>
+    <br>
+    <br>
+    <div class = "edit-link">
+      <a href="/songs">Cancel</a>
+    </div>
 </form>
 

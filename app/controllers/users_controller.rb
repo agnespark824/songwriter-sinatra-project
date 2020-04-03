@@ -46,7 +46,7 @@ class UsersController < ApplicationController
     end
 
  	post "/users" do
-    	@user = User.new(first_name: params["user"]["first_name"], last_name: params["user"]["last_name"],username: params["user"]["username"], password: params["user"]["password"])
+    	@user = User.new(params["user"])
 		if @user.save
 			flash[:notice] = "Success!"
       		session["user_id"] = @user.id
@@ -70,6 +70,7 @@ class UsersController < ApplicationController
 		@user = User.find(session["user_id"])
 		if @user && @user == current_user
 			@user.update(params["user"])
+			flash[:notice] = "Success!"
 			redirect "/users/#{@user.id}"
 		else
 			redirect "/"
