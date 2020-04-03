@@ -1,0 +1,16 @@
+<h3>Enter your password to delete your account.</h3>
+
+<form action="/users/<%= @user.id %>" method="post">
+    <input type="hidden" name="_method" value="DELETE">
+    
+    <label for="user_password"><b>Password</b><label><br> 
+    <input type="password" placeholder="Enter Password" name ="user_password"><br>
+    
+<input type="submit" value="Delete Account">
+<br>
+<br>
+<div class="cancel-link">
+    <a href="/users/<%= @user.id %>/edit">Cancel</a>
+</div>
+  
+</form>

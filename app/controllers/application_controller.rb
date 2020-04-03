@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
 		set :public_folder, 'public'
 		set :views, 'app/views'
 		set :session_secret, "dwizzy"
-		set :method_override, true
+		#set :method_override, true
   	end
 
 	helpers do

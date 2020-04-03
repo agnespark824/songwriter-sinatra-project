@@ -34,14 +34,18 @@ class SongsController < ApplicationController
 		if logged_in?
 			@song = Song.find(params["id"])
 			@song.update(title: params["song"]["title"], themes: params["song"]["themes"], notes: params["song"]["notes"], lyrics: params["song"]["lyrics"])
-			@song.save
 			redirect "/songs/#{@song.id}"
 		else
 			redirect "/"
 		end
 	end
 
-  	delete "/songs/:id/delete" do  
+	get "/songs/:id/delete" do  
+		@song = Song.find(params["id"])
+		erb :"/songs/delete.html"
+	end
+	
+	delete "/songs/:id" do  
 		@song = Song.find(params["id"])
 		@song.destroy
 		redirect "/songs"

@@ -1,16 +1,28 @@
-<form action="/users/<%= @user.id %>" method="post">
-    <label for="user_first_name"><b>Name</b><label><br>
-    <input type="text" placeholder="Enter First Name" id="user_first_name" name="user[first_name]"><br><br>  
+<!DOCTYPE html>
+<head>
+</head>
+<body>
 
-    <label for="user_last_name"><b>Name</b><label><br>
-    <input type="text" placeholder="Enter First Name" id="user_last_name" name="user[last_name]"><br><br>  
+<h2>Update Your Account</h2>
+
+<form action="/users/<%= @user.id %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+
+    <label for="user_first_name"><b>First Name</b><label><br>
+    <input type="text" placeholder="<%= @user.first_name %>" id="user_first_name" name="user[first_name]"value="<%= @user.first_name %>"><br><br>  
+
+    <label for="user_last_name"><b>Last Name</b><label><br>
+    <input type="text" placeholder="<%= @user.last_name %>" id="user_last_name" name="user[last_name]" value="<%= @user.last_name %>"><br><br>  
 
     <label for="user_username"><b>Username</b><label><br>
-    <input type="text" placeholder="Enter Username" id="user_username" name="user[username]"><br><br>
+    <input type="text" placeholder="<%= @user.username %>" id="user_username" name="user[username]" value="<%= @user.username %>"><br><br>
 
-    <label for="user_password"><b>Password</b><label><br> 
-    <input type="password" placeholder="Enter Password" id="user_password" name="user[password]"><br><br>
+    <label for="user_password"><b>Password (required)</b><label><br> 
+    <input type="password" placeholder="Enter Password" id="user_password" name="user[password]"value="<%= @user.password %>"><br><br>
 
-    <input type="submit" value="Create">    
+    <input type="submit" value="Update">    
 </form>
+    
 
+</body>
+</html>

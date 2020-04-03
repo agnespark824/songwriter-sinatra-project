@@ -1,12 +1,21 @@
-<h3>My Profile</h3>
+<body>
+<h2>My Profile</h2>
 
-<div class="profile">
-<p>First Name: <%= current_user.first_name %></p>
+
+<b>First Name: </b>
+<p><%= current_user.first_name %></p>
 <br>
-<p>Last Name: <%= current_user.last_name %></p>
+<b>Last Name: </b>
+<p><%= current_user.last_name %></p>
 <br>
-<p>Username: <%= current_user.username %></p>
+<b>Username: </b>
+<p><%= current_user.username %></p>
 <br>
-<br>
-<p><a href="/users/<%= @user.id %>/edit">Edit Profile</a>
+
+<div class="edit-link">
+<a href="/users/<%= @user.id %>/edit">Edit Profile</a>
+<a href="/users/<%= @user.id %>/delete">Delete Account</a>
+</div>
+
+</body>
 

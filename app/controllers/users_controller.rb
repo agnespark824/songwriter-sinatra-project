@@ -33,8 +33,7 @@ class UsersController < ApplicationController
 			redirect "/signup"
 		else
 			flash[:notice] = "Your account has been successfully created. Please log in."
-			@user = User.create(first_name: params["user"]["first_name"], last_name: params["user"]["last_name"], username: params["user"]["username"], password: params["user"]["password"])
-
+			@user = User.create(params["user"])
 			redirect "/"
 		end
 	end
@@ -68,12 +67,34 @@ class UsersController < ApplicationController
 	end
 
 	patch "/users/:id" do
-		if logged_in?
-			@user = User.find(params["user"])
+		@user = User.find(session["user_id"])
+		if @user && @user == current_user
 			@user.update(params["user"])
-			redirect "/@user.id"
+			redirect "/users/#{@user.id}"
 		else
 			redirect "/"
+		end
+	end
+
+	get "/users/:id/delete" do  
+		if logged_in?
+			@user = User.find(session["user_id"])
+			erb :"/users/delete.html"
+		else
+			flash[:notice] = "You must be logged in to perform this action."
+			redirect "/"
+		end
+	end
+	
+	delete "/users/:id" do  
+		@user = User.find(session["user_id"])
+		if @user.authenticate(params["user_password"])
+			@user.destroy
+			flash[:notice] = "Your account has been deleted."
+			redirect "/logout"
+		else
+			flash[:notice] = "That is not the correct password."
+			redirect "/users/:id"
 		end
 	end
 end

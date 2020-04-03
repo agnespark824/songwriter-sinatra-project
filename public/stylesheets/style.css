@@ -30,7 +30,7 @@
         color: #f2f2f2;
     }
 
-    .topnav a.active {
+    .topnav a:active {
         background-color: #ac3b61;
         color: #f2f2f2;
     }
@@ -62,7 +62,7 @@
         clear: both;
       }
     
-      footer.branding {
+    footer.branding {
         border-top: 2px solid #123c69;
         margin-top: 20px;
         padding-top: 20px;
@@ -73,45 +73,72 @@
         text-align: center;
     }
 
-    .signup-left {
-        text-align: right;
+
+    input[type=text] {
+        width: 35%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+    input[type=password] {
+        width: 35%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
     }
-
-    input[type=text], select {
-        width: 35%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-      }
-
-      input[type=password], select {
-        width: 35%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-      }
       
-      input[type=submit] {
+    input[type=submit], .edit-link a, .cancel-link a {
         width: 35%;
         background-color: #ac3b61;
         color: white;
+        font-size: 14px;
         padding: 14px 20px;
         margin: 8px 0;
         border: none;
         border-radius: 4px;
         cursor: pointer;
-      }
+        text-decoration: none;
+    }
       
-      
-      .submit {
-        border-radius: 5px;
-        background-color: #f2f2f2;
+
+    ul {
+        background: #eee2dc;
         padding: 20px;
-      }
+    }
+      
+    ul li {
+        background: #edc7b7;
+        margin: 5px;
+        padding: 5px;
+    }
+
+    
+
+    h1 {
+        font-size: 36px;
+        line-height: 54px;
+    }
+
+    h2 {
+        border-bottom: 2px solid #bab2b5;
+        font-size: 24px;
+        line-height: 36px;
+        margin-bottom: 16px;
+    }
+
+    h3 {
+        font-size: 18px;
+        line-height: 36px;
+    }
+
+    p {
+        margin-bottom: 18px;
+    }
 }
