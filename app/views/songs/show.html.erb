@@ -1,8 +1,8 @@
 <h1><%= @song.title %></h1>
 <p><%= @song.lyrics %></p>
-
-
-<form action=”/songs/<%= @song.id %>” method=”post”>
-<input type=”hidden” name=”_method” value=”delete”/>
-<input type=”submit” value=”delete”>
-</form>
+<br>
+<br>
+<a href="/songs/<%= @song.id %>/edit">Edit</a>
+<br>
+<br>
+<a href="/songs/<%= @song.id %>/delete">Delete</a>

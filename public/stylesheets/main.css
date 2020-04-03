@@ -13,14 +13,14 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightblue;
+    background-color:#edc7b7;
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
   }
 
   .wrapper {
-    background: #fff;
+    background: #edc7b7;
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -91,9 +91,33 @@
     width: auto;
   }
 
-  .content, .sidebar {
+  .content, .sidebar, .topnav {
     float: none;
     width: 100%;
+  }
+
+  .topnav {
+    overflow: hidden;
+    background-color: #123c69
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #bab2b5;
+    color: eee2dc;
+  }
+  
+  .topnav a.active {
+    background-color: #bab2b5;
+    color: white;
   }
 
   .sidebar {

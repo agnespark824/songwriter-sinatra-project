@@ -3,24 +3,28 @@ require './config/environment'
 class ApplicationController < Sinatra::Base
 
 	configure do
+		enable :sessions
+		register Sinatra::Flash
 		set :public_folder, 'public'
 		set :views, 'app/views'
-		enable :sessions
-		set :session_secret, "dwizzy_dweek"
+		set :session_secret, "dwizzy"
+		set :method_override, true
   	end
 
 	helpers do
-		def logged_in?
-			!!session["user_id"]
-		end
-
 		def login(username, password)
 			user = User.find_by(username: username)  
 			if user && user.authenticate(password)
 				session["user_id"] = user.id
+				redirect "/songs"
 			else
-				erb :"sessions/error.html"
+				flash[:warning] = "The username and password you entered did not match our records. Please try again."
+				redirect "/"
 			end
+		end	
+		
+		def logged_in?
+			!!session["user_id"]
 		end
 
 		def current_user
@@ -33,9 +37,17 @@ class ApplicationController < Sinatra::Base
 			session.clear
 		end
 	end
-	  
+
 	get "/" do
-    	erb :"sessions/home"
+		if logged_in?
+			redirect "/songs"
+		else
+			erb :"sessions/home"
+		end
+	end
+
+	post "/" do
+		login(params["username"], params["password"])
 	end
     
 end

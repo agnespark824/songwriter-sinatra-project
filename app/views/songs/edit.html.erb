@@ -1,16 +1,18 @@
 <form action="/songs/<%= @song.id %>" method="post">
-    <label for="song_title"><h3>Title</h3></label>
-    <textarea id="song_title" name="song[title]" value="<%= @song.title %>" rows="1" cols="100"></textarea><br>
-
-    <label for="song_themes"><h3>Theme(s)</h3></label>
-    <textarea id="song_themes" name="song[themes]" rows="5" value="<%= @song.themes %>" cols="190"></textarea><br>
-
-    <label for="song_notes"><h3>Notes</h3></label>
-    <textarea id="song_notes" name="song[notes]" value="<%= @song.notes %>" rows="15" cols="190"></textarea><br>
-
-    <label for="song_lyrics"><h3>Lyrics</h3></label>
-    <textarea id="song_lyrics" name="song[lyrics]" value="<%= @song.lyrics %>" rows="50" cols="190"></textarea><br><br>  
     <input type="hidden" name="_method" value="patch">
 
-    <button type="submit" class="song_save_button">Save</button>    
+    <label for="song_title"><h3>Title</h3></label>
+    <textarea id="song_title" name="song[title]" value="<%= @song.title %>" rows="1" cols="100"><%= @song.title %></textarea><br>
+
+    <label for="song_themes"><h3>Theme(s)</h3></label>
+    <textarea id="song_themes" name="song[themes]" rows="5" value="<%= @song.themes %>" cols="190"><%= @song.themes %></textarea><br>
+
+    <label for="song_notes"><h3>Notes</h3></label>
+    <textarea id="song_notes" name="song[notes]" value="<%= @song.notes %>" rows="15" cols="190"><%= @song.notes %></textarea><br>
+
+    <label for="song_lyrics"><h3>Lyrics</h3></label>
+    <textarea id="song_lyrics" name="song[lyrics]" value="<%= @song.lyrics %>" rows="50" cols="190"><%= @song.lyrics %></textarea><br><br>  
+    
+    <input type="submit" value="Save">
+    <br>    
 </form>

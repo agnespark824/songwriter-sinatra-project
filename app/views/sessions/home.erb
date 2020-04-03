@@ -4,20 +4,24 @@
 </head>
 
 <body>
-    <h1>SongWriter</h1>
-    <h4>Please log in to your account.</h4><br>
+    <div class="homepage">
+        <h1 class="home-center">SongWriter</h1>
+        <h4 class="home-center">Please log in to your account.</h4>
 
-    <form action="/sessions" method= "post">
-        <label for="user_username"><b>Username</b><label><br>
-        <input type="text" placeholder="Enter Username" id="user_username" name="username"><br>
-    
-        <label for="user_password"><b>Password</b><label><br> 
-        <input type="password" placeholder="Enter Password" id="user_password" name="password"><br>
-    
-        <button type="submit" class="login_button">Log In</button>    
-    </form>
-    <br><br>
-    <a href="/signup">Register</a><br>
+        <span class="home-center">
+            <form action="/" method= "post">
+                <label for="username"><b>Username</b><label><br>
+                <input type="text" placeholder="Enter Username" id="user_username" name="username">
+                <br>
+                <label for="password"><b>Password</b><label><br> 
+                <input type="password" placeholder="Enter Password" id="user_password" name="password"><br>
+            
+                <input type="submit" value="Log In"> 
+            </form>
+        </span>
+        <br>
+        <br>
+    </div>
 </body>
 
 </html>

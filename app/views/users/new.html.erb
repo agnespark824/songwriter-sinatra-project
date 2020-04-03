@@ -1,14 +1,20 @@
-<h1>Create Your Account</h1>
+<div class="signup">
+<h1 class="signup-center">Create Your Account</h1>
 
-<form action="/users" method="post">
-    <label for="user_name"><b>Name</b><label><br>
-    <input type="text" placeholder="Enter Name" id="user_name" name="name"><br><br>  
+<div class="signup-center">
+<form action="/signup" method="post">
+    <label for="user_first_name"><b>First Name</b><label>
+    <input type="text" placeholder="Enter First Name" id="user_first_name" name="user[first_name]"><br>
 
-    <label for="user_username"><b>Username</b><label><br>
-    <input type="text" placeholder="Enter Username" id="user_username" name="username"><br><br>
+    <label for="user_last_name"><b>Last Name</b><label>
+    <input type="text" placeholder="Enter Last Name" id="user_last_name" name="user[last_name]"><br>  
 
-    <label for="user_password"><b>Password</b><label><br> 
-    <input type="password" placeholder="Enter Password" id="user_password" name="password"><br><br>
+    <label for="user_username"><b>Username</b><label>
+    <input type="text" placeholder="Enter Username" id="user_username" name="user[username]"><br>
 
-    <button type="submit" class="create_account_button">Create</button>    
+    <label for="user_password"><b>Password</b><label>
+    <input type="password" placeholder="Enter Password" id="user_password" name="user[password]"><br>
+    <input type="submit" value="Create">    
 </form>
+</div>
+</div>
